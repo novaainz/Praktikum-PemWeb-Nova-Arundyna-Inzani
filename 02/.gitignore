@@ -1,0 +1,11 @@
+#Editor & IDE
+.vscode/
+.idea/*.swp
+
+#OS metadata
+.DS_Store
+Thumbs.db
+
+#Log & build cache
+*.log
+.cache/
