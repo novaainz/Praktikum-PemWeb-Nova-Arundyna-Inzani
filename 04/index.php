@@ -115,7 +115,7 @@ require_once __DIR__ . '/includes/header.php';
                 <?php if (empty($daftar_mahasiswa)): ?>
                     <!-- Percobaan 4-2 Langkah 4 -->
                     <tr> 
-                        <td colspan="8" class="emprty-row"> <?= !empty($keyword) ? 'Tidak ditemukan data mahasiswa dengan kata kunci"' . htmlspecialcars($keyword) . '".' : 'Belum ada data mahasiswa yang tersimpan.' ?>
+                        <td colspan="8" class="empty-row"> <?= !empty($keyword) ? 'Tidak ditemukan data mahasiswa dengan kata kunci"' . htmlspecialchars($keyword) . '".' : 'Belum ada data mahasiswa yang tersimpan.' ?>
                         </td>
                     </tr>
                 <?php else: ?>
@@ -134,7 +134,7 @@ require_once __DIR__ . '/includes/header.php';
                             <td><a href="mailto:<?= htmlspecialchars($mhs['email']) ?>" class="link-email"><?= htmlspecialchars($mhs['email']) ?></a></td>
                             <td>
                                 <!-- Percobaan 4-2 Langkah 5 -->
-                                <a href="proses_hapus.php?id=<?=urlencode($mhs['npm']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus mahasiswa: <?= htmlspecialchars(addslashes($mhs['nama'])) ?> (npm: <?= htmlspecialchars($mhs['npm']) ?>)?');">Hapus</a>
+                                <a href="proses_hapus.php?npm=<?=urlencode($mhs['npm']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus mahasiswa: <?= htmlspecialchars(addslashes($mhs['nama'])) ?> (npm: <?= htmlspecialchars($mhs['npm']) ?>)?');">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -230,4 +230,5 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
 <!-- memanggil file footer.php -->
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
 
